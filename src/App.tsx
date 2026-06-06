@@ -15,6 +15,7 @@ import RequireAdminAuth from './components/auth/RequireAdminAuth'
 import PortalAuthPage from './pages/PortalAuthPage'
 import PortalPage from './pages/PortalPage'
 import RequireUserAuth from './components/auth/RequireUserAuth'
+import AgentChat from './components/AgentChatComponent'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -49,14 +50,15 @@ function App() {
                 </main>
                 <Footer />
                 <Toaster />
+                <AgentChat />
               </div>
             }
           >
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/portfolio" element={<PortfolioPage />} />
-              <Route path="/contact" element={<ContactPage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Route>
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route element={<RequireAdminAuth />}>
